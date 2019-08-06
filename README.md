@@ -88,13 +88,16 @@ Name: Susie Smith<br/>
 Phone: 3039403856<br/>
 Email: ssmith@company.co
 
-### Test 7 (no email)
+### Test 7 (no email, expected failure of parser)
 
 input:<br/>
 python3 ocr.py --document "Susie Smith\n@susiesmith\noffice:3018959050\ncell:3039403856"
 
 expected output:<br/>
-Error: Email not found; cannot parse business card
+Error: Caution! Email not found. Business card parsing not complete.<br/>
+Name: idk<br/>
+Phone: 3039403856<br/>
+Email: None
 
 ### Test 8 (email and phone on same line)
 
