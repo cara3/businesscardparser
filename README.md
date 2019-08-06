@@ -42,8 +42,8 @@ input:
 python3 ocr.py --document "awilson@abctech.com\nArthur Wilson\nSoftware Engineer\nDecision & Security Technologies\nABC Technologies\n123 North 11th Street\nSuite 229\nArlington, VA 22209\nTel: +1 (703) 555-1259\nFax: +1 (703) 555-1200"
 
 expected output:
-Name: Arthur Wilson\r
-Phone: 17035551259\r
+Name: Arthur Wilson<br/>
+Phone: 17035551259<br/>
 Email: awilson@abctech.com
 
 ### Test 2 (email after name)
