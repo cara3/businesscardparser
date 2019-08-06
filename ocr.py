@@ -97,14 +97,14 @@ class BusinessCardParser:
             if (email == None):
                 email = getEmailAddress(line)
                 if email != None:
-                    lines.pop(line)
+                    lines.pop(lines.index(line))
             
             
             # extract phone number
             if (phone == None):
                 phone = getPhone(line)
                 if phone != None:
-                    lines.pop(line)
+                    lines.pop(lines.index(line))
             
             # extract name
             if ((name == None) & (email != None)):
