@@ -1,13 +1,13 @@
 # Business Card OCR
 
-This code is written in Python 3 and requires the following packages: re and argparse
+This code is written in Python 3.
 
 This program is designed to take the text of a business card as a string input and returns a ContactInfo object with the name, phone number and email address of the business card owner. 
 
 ## Instructions
 To run the program, open a Bash command line window and enter the the following:
 
-python3 <path_to_this_directory>/ocr.py --document "input business card string here"
+python3 ocr.py --document <business_card_text>
 
 Replace <path_to_this_directory> with the path to the directory with the ocr.py script.
 
@@ -21,8 +21,6 @@ The code may dazzle you with the following capabilities:
 * Ignores fax numbers when looking for a phone number.
 * Disregards extraneous information such as addresses, company names and job titles.
 * Does not confuse twitter handles with email addresses.
-
-Note: Efficiency considerations include identifying names using matches to substrings of the email address instead of constructing a complete suffix tree between an email and a candidate name. In addition, because names are identified by matching to email addresses, which means that a name can't be identified until the card owner's email has been parsed, the order of the input text is reversed so that the last line on the card is assessed first. This is due to the higher likelihood that the email address will be found lower down on the card than the person's name. If this is not the case, lines will be returned to their original order and re-analyzed. This avoids requiring nested loops inside the getContactInfo() function.
 
 ## Code Limitations
 Despite these amazing capabilities, there are some features that have yet to be implemented, including:
@@ -90,6 +88,24 @@ Email: bob@asymmetrik.com
 
 input:<br/>
 python3 ocr.py --document "Susie Smith\n @susiesmith\n office:3018959050\n cell:3039403856 \n ssmith@company.co"
+
+expected output:<br/>
+Name: Susie Smith<br/>
+Phone: 3039403856<br/>
+Email: ssmith@company.co
+
+### Test 7 (no email)
+
+input:<br/>
+python3 ocr.py --document "Susie Smith\n @susiesmith\n office:3018959050\n cell:3039403856"
+
+expected output:<br/>
+Error: Email not found; cannot parse business card
+
+### Test 8 (email and phone on same line)
+
+input:<br/>
+python3 ocr.py --document "Susie Smith\n @susiesmith\n cell:3039403856; ssmith@company.co"
 
 expected output:<br/>
 Name: Susie Smith<br/>
