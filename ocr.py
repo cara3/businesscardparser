@@ -15,9 +15,8 @@ def main():
 def getEmailAddress(line):
     
     """
-    This function takes a line of text as input, assesses whether the text is an email address, 
-    and if so, returns it. The function defines an email address as any line of text that contains an @ symbol
-    with some characters to the left of the @ symbol (to exclude twitter handles).
+    Takes a line of text as input, assesses whether the text is an email address by checking for
+    an @ symbol preceded by at least one character (to exclude twitter handles). Returns email if found.
     """
     if re.match('\@',line) == None:
         if re.search('\@',line):
@@ -27,10 +26,10 @@ def getEmailAddress(line):
 def getName(line, email):
     
     """
-    This function takes a line of text and an email address as inputs.
-    It finds all 4-character substrings in the first part of the email address (before @ symbol)
-    and counts the number of substrings where the the line of text. If a match of at least 4 characters is found, it assumes the text is a name 
-    and returns it.
+    Takes a line of text and an email address as inputs, finds all 4-character substrings
+    in the first part of the email address (before @ symbol) and counts the number of email 
+    substrings contained in the line of text. Returns name if at least one match between text and 
+    email substrings is found.
     """
     
     if email != None:
@@ -55,8 +54,9 @@ def getName(line, email):
 def getPhone(line):
     
     """
-    This function takes a line of text as an input and returns it if the line is determined to be a phone number.
-    A phone number is defined as any text string with at least 10 numeric digits that does not contain the letter F (or it might be a fax number).
+    Takes a line of text as an input and checks if it is a phone number by looking
+    for a text string with at least 10 numeric digits that does not contain 
+    the letter F (to exclude fax numbers).
     """
     
     if sum(x.isdigit() for x in line) >= 10:
@@ -73,9 +73,10 @@ class BusinessCardParser:
     def getContactInfo(document):
     
         """
-        This function is takes a document string as an input. That string is assumed to contain
+        Takes a document string as an input. That string is assumed to contain
         contact information with different information items (e.g., name, email) separated by line
-        breaks. The function calls other functions which identify the name, phone number and email address from the contact information. These three items are then returned in a
+        breaks. The function calls other functions which identify the name, phone number and email 
+        address from the contact information. These three items are then returned in a
         ContactInfo object.
         """
         
