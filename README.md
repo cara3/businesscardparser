@@ -79,7 +79,7 @@ Email: msmith@asymmetrik.com
 ### Test 5 (short email, expected failure of parser)
 
 input: <br/>
-python3 ocr.py --document "ASYMMETRIK LTD\n Bob Smith\n Senior Software Engineer\n (410)555-1234\n bob@asymmetrik.com"
+python3 ocr.py --document "ASYMMETRIK LTD\n Bob Smith\n Senior Software Engineer\n (410)555-1234\nbob@asymmetrik.com"
 
 expected output:<br/>
 Name: None<br/>
