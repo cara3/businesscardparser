@@ -94,30 +94,32 @@ class BusinessCardParser:
         for line in lines:
             
             # extract email
-            if (email == None) | (email == 'idk'):
+            if (email == None):
                 email = getEmailAddress(line)
-                if email not None:
+                if email != None:
                     lines.pop(line)
             
             
             # extract phone number
-            if (phone == None) | (phone == 'idk'):
+            if (phone == None):
                 phone = getPhone(line)
+                if phone != None:
+                    lines.pop(line)
             
             # extract name
-            if ((name == None) | (name == 'idk')) & ((email != None) & (email != 'idk')):
+            if ((name == None) & (email != None)):
                 name = getName(line, email)
     
 
         # if re-order didn't work (i.e., email came before name), return to original line order and try again
-        if ((name == None) | (name == 'idk')):
+        if ((name == None)):
             
             lines.reverse()
 
             for line in lines:
                 
                 # extract name
-                if ((name == None) | (name == 'idk')) & ((email != None) & (email != 'idk')):
+                if ((name == None) & (email != None)):
                     name = getName(line, email)
         
         # error handling - print error message if email not found
