@@ -9,12 +9,6 @@ To run the program, open a Bash command line window and enter the the following:
 
 python3 ocr.py --document <business_card_text>
 
-Replace <path_to_this_directory> with the path to the directory with the ocr.py script.
-
-Replace "input business card string here" with the text from the OCR reader of a scanned business card with lines separated by \n. 
-
-Press enter and results will be returned and printed to the console.
-
 ## Code Functionality
 The code may dazzle you with the following capabilities:
 * Parses names efficiently regardless of number of lines and order of text. 
