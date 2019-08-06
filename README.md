@@ -96,7 +96,7 @@ python3 ocr.py --document "Susie Smith\n@susiesmith\noffice:3018959050\ncell:303
 
 expected output:<br/>
 Error: Caution! Email not found. Business card parsing not complete.<br/>
-Name: idk<br/>
+Name: None<br/>
 Phone: 3039403856<br/>
 Email: None
 
