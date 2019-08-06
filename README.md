@@ -4,6 +4,7 @@ This code is written in Python 3 and requires the following packages: re and arg
 
 This program is designed to take the text of a business card as a string input and returns a ContactInfo object with the name, phone number and email address of the business card owner. 
 
+## Instructions
 To run the program, open a Bash command line window and enter the the following:
 
 python3 <path_to_this_directory>/ocr.py --document "input business card string here"
@@ -14,6 +15,7 @@ Replace "input business card string here" with the text from the OCR reader of a
 
 Press enter and results will be returned and printed to the console.
 
+## Code Functionality
 The code may dazzle you with the following capabilities:
 * Parses names efficiently regardless of number of lines and order of text. 
 * Ignores fax numbers when looking for a phone number.
@@ -22,6 +24,7 @@ The code may dazzle you with the following capabilities:
 
 Note: Efficiency considerations include identifying names using matches to substrings of the email address instead of constructing a complete suffix tree between an email and a candidate name. In addition, because names are identified by matching to email addresses, which means that a name can't be identified until the card owner's email has been parsed, the order of the input text is reversed so that the last line on the card is assessed first. This is due to the higher likelihood that the email address will be found lower down on the card than the person's name. If this is not the case, lines will be returned to their original order and re-analyzed. This avoids requiring nested loops inside the getContactInfo() function.
 
+## Code Limitations
 Despite these amazing capabilities, there are some features that have yet to be implemented, including:
 * Support for multiple phone numbers (only one will be extracted, and this will be the phone number appearing in the lowest, i.e., closest to the bottom, line of the card).
 * Ability to identify names for individual's whose work emails do not contain at least 4 characters of their name, or who do not have an email listed on their business card (future versions may use a first name api to identify names that are not otherwise found).
