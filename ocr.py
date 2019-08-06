@@ -118,13 +118,11 @@ class BusinessCardParser:
                 if ((name == None) | (name == 'idk')) & ((email != None) & (email != 'idk')):
                     name = getName(line, email)
         
-        # error handling - break if no email found
+        # error handling - print error message if email not found
         if (email == None):
-            print('Error: Email not found; cannot parse business card')
+            print('Error: Caution! Email not found. Business card parsing not complete.')
         
-        # if email found, return all parsed info
-        else:
-            return ContactInfo(name, phone, email)
+        return ContactInfo(name, phone, email)
 
 class ContactInfo:
     
