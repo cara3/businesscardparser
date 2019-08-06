@@ -83,7 +83,7 @@ class BusinessCardParser:
         lines = list(document.values())
         lines = lines[0].split("\\n")
         
-        # reorder the list
+        # reorder the list for efficiency (need to find email before name, most likely comes after name in line order)
         lines.reverse()
         
         # define starting value for variables
