@@ -41,7 +41,7 @@ Email: awilson@abctech.com
 ### Test 2 (email after name)
 
 input: <br/>
-python3 ocr.py --document "Foobar Technologies\n Analytic Developer \n Lisa Haung\n lisa.haung@foobartech.com \n 1234 Sentry Road\n Columbia, MD 12345\n Phone: 410-555-1234\n Fax: 410-555-4321"
+python3 ocr.py --document "Foobar Technologies\nAnalytic Developer \nLisa Haung\nlisa.haung@foobartech.com \n1234 Sentry Road\nColumbia, MD 12345\nPhone: 410-555-1234\nFax: 410-555-4321"
 
 expected output:<br/>
 Name: Lisa Haung<br/>
@@ -51,7 +51,7 @@ Email: lisa.haung@foobartech.com
 ### Test 3 (fairly typical card)
 
 input:<br/>
-python3 ocr.py --document "ASYMMETRIK LTD\n Mike Smith\n Senior Software Engineer\n (410)555-1234\n msmith@asymmetrik.com"
+python3 ocr.py --document "ASYMMETRIK LTD\nMike Smith\nSenior Software Engineer\n(410)555-1234\nmsmith@asymmetrik.com"
 
 expected output:<br/>
 Name: Mike Smith<br/>
@@ -61,7 +61,7 @@ Email: msmith@asymmetrik.com
 ### Test 4 (missing phone number)
 
 input: <br/>
-python3 ocr.py --document "ASYMMETRIK LTD\n Mike Smith\n Senior Software Engineer\n Fax: (410)555-1234\n msmith@asymmetrik.com"
+python3 ocr.py --document "ASYMMETRIK LTD\nMike Smith\nSenior Software Engineer\nFax: (410)555-1234\nmsmith@asymmetrik.com"
 
 expected output:<br/>
 Name: Mike Smith<br/>
@@ -71,7 +71,7 @@ Email: msmith@asymmetrik.com
 ### Test 5 (short email, expected failure of parser)
 
 input: <br/>
-python3 ocr.py --document "ASYMMETRIK LTD\n Bob Smith\n Senior Software Engineer\n (410)555-1234\nbob@asymmetrik.com"
+python3 ocr.py --document "ASYMMETRIK LTD\nBob Smith\nSenior Software Engineer\n(410)555-1234\nbob@asymmetrik.com"
 
 expected output:<br/>
 Name: None<br/>
@@ -81,7 +81,7 @@ Email: bob@asymmetrik.com
 ### Test 6 (twitter handle, multiple phone numbers)
 
 input:<br/>
-python3 ocr.py --document "Susie Smith\n @susiesmith\n office:3018959050\n cell:3039403856 \n ssmith@company.co"
+python3 ocr.py --document "Susie Smith\n@susiesmith\noffice:3018959050\ncell:3039403856\nssmith@company.co"
 
 expected output:<br/>
 Name: Susie Smith<br/>
@@ -91,7 +91,7 @@ Email: ssmith@company.co
 ### Test 7 (no email)
 
 input:<br/>
-python3 ocr.py --document "Susie Smith\n @susiesmith\n office:3018959050\n cell:3039403856"
+python3 ocr.py --document "Susie Smith\n@susiesmith\noffice:3018959050\ncell:3039403856"
 
 expected output:<br/>
 Error: Email not found; cannot parse business card
@@ -99,7 +99,7 @@ Error: Email not found; cannot parse business card
 ### Test 8 (email and phone on same line)
 
 input:<br/>
-python3 ocr.py --document "Susie Smith\n @susiesmith\n cell:3039403856; ssmith@company.co"
+python3 ocr.py --document "Susie Smith\n@susiesmith\n cell:3039403856; ssmith@company.co"
 
 expected output:<br/>
 Name: Susie Smith<br/>
