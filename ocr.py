@@ -103,8 +103,8 @@ class BusinessCardParser:
             # extract phone number
             if (phone == None):
                 phone = getPhone(line)
-                if phone != None:
-                    lines.pop(lines.index(line))
+             #   if phone != None:
+              #      lines.pop(lines.index(line))
             
             # extract name
             if ((name == None) & (email != None)):
