@@ -32,9 +32,9 @@ Despite these amazing capabilities, there are some features that have yet to be 
 * Sensible error message that say what happened if information is not found.
  
 ## Testing the code
-Automated unit testing may be awesome, but sometimes it's fun to practice those copy & paste skills and test things by hand. 
+Automated unit testing might be great, but it is not included with this code. Instead, you can keep your copy and paste skills sharp by testing the following lines of code in your command line window.
 
-Therefore, all tests for this program, including command line codes to copy and paste and expected outputs, can be found in this README file. The commands are written with the assumption that the current directory contains the ocr.py file. If not, a file path will need to be added as shown in the instructions section at the top of this page.
+All tests for this program are found below in this README. The tests include command line code inputs to copy and paste and expected outputs that should appear in the console. The commands are written with the assumption that the current directory contains the ocr.py file. If not, a file path will need to be added as shown in the instructions section at the top of this page.
 
 ### Test 1 (email before name, multiple numbers)
 
