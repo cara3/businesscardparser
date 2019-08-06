@@ -87,15 +87,17 @@ class BusinessCardParser:
         lines.reverse()
         
         # define starting value for variables
-        email = 'idk'
-        phone = 'idk'
-        name = 'idk'
+        email = None
+        phone = None
+        name = None
         
         for line in lines:
             
             # extract email
             if (email == None) | (email == 'idk'):
                 email = getEmailAddress(line)
+                if email not None:
+                    lines.pop(line)
             
             
             # extract phone number
