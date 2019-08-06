@@ -107,7 +107,7 @@ class BusinessCardParser:
                 name = getName(line, email)
     
 
-        # if re-order didn't work (i.e., email came before name), re-reverse and try again
+        # if re-order didn't work (i.e., email came before name), return to original line order and try again
         if ((name == None) | (name == 'idk')):
             
             lines.reverse()
@@ -121,9 +121,10 @@ class BusinessCardParser:
         # error handling - break if no email found
         if (email == None):
             print('Error: Email not found; cannot parse business card')
-            exit
-            
-        return ContactInfo(name, phone, email)
+        
+        # if email found, return all parsed info
+        else:
+            return ContactInfo(name, phone, email)
 
 class ContactInfo:
     
