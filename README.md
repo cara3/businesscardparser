@@ -34,7 +34,7 @@ Despite these amazing capabilities, there are some features that have yet to be 
 ## Testing the code
 Automated unit testing may be awesome, but sometimes it's fun to practice those copy & paste skills and test things by hand. 
 
-Therefore, all tests for this program, including command line codes to copy and paste and expected outputs, can be found in this readme. The commands are written with the assumption that the current directory contains the ocr.py file. If not, a file path will need to be added as shown in the example at the top of this page.
+Therefore, all tests for this program, including command line codes to copy and paste and expected outputs, can be found in this README file. The commands are written with the assumption that the current directory contains the ocr.py file. If not, a file path will need to be added as shown in the instructions section at the top of this page.
 
 ### Test 1 (email before name, multiple numbers)
 
