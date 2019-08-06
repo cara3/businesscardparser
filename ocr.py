@@ -121,7 +121,7 @@ class BusinessCardParser:
         # error handling - break if no email found
         if (email == None):
             print('Error: Email not found; cannot parse business card')
-            break
+            exit
             
         return ContactInfo(name, phone, email)
 
