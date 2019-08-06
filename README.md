@@ -100,7 +100,7 @@ Name: None<br/>
 Phone: 3039403856<br/>
 Email: None
 
-### Test 8 (email and phone on same line)
+### Test 8 (email and phone on same line, expected failure of email parsing)
 
 input:<br/>
 python3 ocr.py --document "Susie Smith\n@susiesmith\n cell:3039403856; ssmith@company.co"
