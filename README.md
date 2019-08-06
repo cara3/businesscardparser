@@ -21,6 +21,7 @@ Despite these amazing capabilities, there are some features that have yet to be 
 * Support for multiple phone numbers (only one will be extracted, and this will be the phone number appearing in the lowest, i.e., closest to the bottom, line of the card).
 * Ability to identify names for individual's whose work emails do not contain at least 4 characters of their name, or who do not have an email listed on their business card (future versions may use a first name api to identify names that are not otherwise found).
 * Ability to reliably identify names, and not company names, in cases where a business card owner names a company after themselves (currently, the line in closest proximity to the email address would be identified as the name).
+* Ability to accurately separate different types of contact information that are found on the same line.
 * Sensible error message that say what happened if information is not found.
  
 ## Testing the code
@@ -107,4 +108,4 @@ python3 ocr.py --document "Susie Smith\n@susiesmith\n cell:3039403856; ssmith@co
 expected output:<br/>
 Name: Susie Smith<br/>
 Phone: 3039403856<br/>
-Email: ssmith@company.co
+Email: cell:3039403856; ssmith@company.co
