@@ -69,17 +69,7 @@ Name: Mike Smith<br/>
 Phone: None<br/>
 Email: msmith@asymmetrik.com
 
-### Test 5 (short email, expected failure of parser)
-
-input: <br/>
-python3 ocr.py --document "ASYMMETRIK LTD\nBob Smith\nSenior Software Engineer\n(410)555-1234\nbob@asymmetrik.com"
-
-expected output:<br/>
-Name: None<br/>
-Phone: 4105551234<br/>
-Email: bob@asymmetrik.com
-
-### Test 6 (twitter handle, multiple phone numbers)
+### Test 5 (twitter handle, multiple phone numbers)
 
 input:<br/>
 python3 ocr.py --document "Susie Smith\n@susiesmith\noffice:3018959050\ncell:3039403856\nssmith@company.co"
@@ -88,6 +78,16 @@ expected output:<br/>
 Name: Susie Smith<br/>
 Phone: 3039403856<br/>
 Email: ssmith@company.co
+
+### Test 6 (short email, expected failure of parser)
+
+input: <br/>
+python3 ocr.py --document "ASYMMETRIK LTD\nBob Smith\nSenior Software Engineer\n(410)555-1234\nbob@asymmetrik.com"
+
+expected output:<br/>
+Name: None<br/>
+Phone: 4105551234<br/>
+Email: bob@asymmetrik.com
 
 ### Test 7 (no email, expected failure of parser)
 
