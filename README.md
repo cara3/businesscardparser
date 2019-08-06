@@ -42,8 +42,8 @@ input:
 python3 ocr.py --document "awilson@abctech.com\nArthur Wilson\nSoftware Engineer\nDecision & Security Technologies\nABC Technologies\n123 North 11th Street\nSuite 229\nArlington, VA 22209\nTel: +1 (703) 555-1259\nFax: +1 (703) 555-1200"
 
 expected output:
-Name: Arthur Wilson
-Phone: 17035551259
+Name: Arthur Wilson\r
+Phone: 17035551259\r
 Email: awilson@abctech.com
 
 ### Test 2 (email after name)
@@ -52,8 +52,8 @@ input:
 python3 ocr.py --document "Foobar Technologies\n Analytic Developer \n Lisa Haung\n lisa.haung@foobartech.com \n 1234 Sentry Road\n Columbia, MD 12345\n Phone: 410-555-1234\n Fax: 410-555-4321"
 
 expected output:
-Name: Lisa Haung
-Phone: 4105551234
+Name: Lisa Haung\r
+Phone: 4105551234\r
 Email: lisa.haung@foobartech.com
 
 ### Test 3 (fairly typical card)
@@ -62,8 +62,8 @@ input:
 python3 ocr.py --document "ASYMMETRIK LTD\n Mike Smith\n Senior Software Engineer\n (410)555-1234\n msmith@asymmetrik.com"
 
 expected output:
-Name: Mike Smith
-Phone: 4105551234
+Name: Mike Smith\r
+Phone: 4105551234\r
 Email: msmith@asymmetrik.com
 
 ### Test 4 (missing phone number)
@@ -72,8 +72,8 @@ input:
 python3 ocr.py --document "ASYMMETRIK LTD\n Mike Smith\n Senior Software Engineer\n Fax: (410)555-1234\n msmith@asymmetrik.com"
 
 expected output:
-Name: Mike Smith
-Phone: None
+Name: Mike Smith\r
+Phone: None\r
 Email: msmith@asymmetrik.com
 
 ### Test 5 (short email, expected failure of parser)
@@ -82,8 +82,8 @@ input:
 python3 ocr.py --document "ASYMMETRIK LTD\n Bob Smith\n Senior Software Engineer\n (410)555-1234\n bob@asymmetrik.com"
 
 expected output:
-Name: None
-Phone: 4105551234
+Name: None\r
+Phone: 4105551234\r
 Email: bob@asymmetrik.com
 
 ### Test 6 (twitter handle, multiple phone numbers)
